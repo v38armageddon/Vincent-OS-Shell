@@ -9,7 +9,7 @@
     </SchemaVersion>
     <ProjectGuid>{E78CF00A-279E-4BD7-85EE-C68E413197F8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Vincent_OS_Shell.Module1</StartupObject>
+    <StartupObject>Vincent_OS_Shell.Shell</StartupObject>
     <RootNamespace>Vincent_OS_Shell</RootNamespace>
     <AssemblyName>Vincent OS Shell</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo Vincent OS 2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -69,7 +72,8 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Commands.vb" />
+    <Compile Include="Vincent OS Shell.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -104,6 +108,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo Vincent OS 2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
