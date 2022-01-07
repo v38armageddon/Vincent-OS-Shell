@@ -11,16 +11,16 @@ Imports System.Runtime.InteropServices
 ' Passez en revue les valeurs des attributs de l'assembly
 
 <Assembly: AssemblyTitle("Vincent OS Shell")> 
-<Assembly: AssemblyDescription("Le Shell de Vincent OS version Standalone")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Vincent OS Shell")> 
-<Assembly: AssemblyCopyright("Open Source 2021")> 
+<Assembly: AssemblyDescription("Le Shell de Vincent OS version Standalone")>
+<Assembly: AssemblyCompany("v38armageddon Software")>
+<Assembly: AssemblyProduct("Vincent OS Shell")>
+<Assembly: AssemblyCopyright("Open Source 2021-2022")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
 
 'Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-<Assembly: Guid("10b1a7d7-ef75-4144-b290-a4ca6964593f")> 
+<Assembly: Guid("10b1a7d7-ef75-4144-b290-a4ca6964593f")>
 
 ' Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 '
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.1")> 
-<Assembly: AssemblyFileVersion("1.0.0.1")> 
+<Assembly: AssemblyVersion("1.0.0.1")>
+<Assembly: AssemblyFileVersion("1.0.0.1")>
 
 <Assembly: NeutralResourcesLanguageAttribute("fr")> 
