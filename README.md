@@ -2,11 +2,22 @@
 Ceci est un dérivé du programme Terminal du mini système d'exploitation Vincent OS
  
 ## Installation
-Une fois que vous avez téléchargé le fichier .zip, dézippez le avec votre logiciel. Pour lancer le logiciel :
 
-Pour les processeurs 32 bits : Vincent OS > Vincent OS > obj > x86 > Debug > Vincent OS Shell.exe
+### Installation standard
+Vous pouvez télécharger les fichiers exécutables sans avoir besoin de tout le dossier : "src".
 
-Pour les processeurs 64 bits : Vincent OS > Vincent OS > bin > Debug > Vincent OS Shell.exe
+### Installation développeur
+Si vous voulez avoir tout les fichiers, vous pouvez cloner le projet.
+
+Une fois que vous avez téléchargé le fichier .zip, dézippez le avec votre logiciel. 
+
+N'oubliez pas que les fichiers exécutables qui sont hors du dossier : "src" ne sont pas synchronisé avec les fichiers exécutables dans le dossier.
+
+Si vous faites un changement, voici la structure de où se situes les nouveaux fichiers exécutables :
+
+Pour les processeurs 32 bits : src/Vincent OS Shell/obj/x86/Debug/Vincent OS Shell.exe
+
+Pour les processeurs 64 bits : src/Vincent OS Shell/bin/Debug/Vincent OS Shell.exe
 
 ## Information
 Ce projet est un projet Open Source soumis sous la licence : The Unlicense.
