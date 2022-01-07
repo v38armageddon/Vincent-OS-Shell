@@ -9,7 +9,7 @@ Pour les processeurs 32 bits : Vincent OS > Vincent OS > obj > x86 > Debug > Vin
 Pour les processeurs 64 bits : Vincent OS > Vincent OS > bin > Debug > Vincent OS Shell.exe
 
 ## Information
-Ce projet est un projet Open Source, toute les modifications sont autorisé.
+Ce projet est un projet Open Source soumis sous la licence : The Unlicense.
 
 Ceci est un projet qui me servira commme concept. Je pense faire un shell spécial sous Linux mais a voir si je vais y arriver ou non à le faire.
 
