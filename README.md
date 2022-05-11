@@ -20,7 +20,7 @@ Pour les processeurs 32 bits : src/Vincent OS Shell/obj/x86/Debug/Vincent OS She
 Pour les processeurs 64 bits : src/Vincent OS Shell/bin/Debug/Vincent OS Shell.exe
 
 ## Information
-Ce projet est un projet Open Source soumis sous la licence : The Unlicense.
+Ce projet est un projet Open Source soumis sous la licence : GPL-3.0.
 
 Ceci est un projet qui me servira commme concept. Je pense faire un shell spécial sous Linux mais a voir si je vais y arriver ou non à le faire.
 
