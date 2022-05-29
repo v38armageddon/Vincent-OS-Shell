@@ -1,8 +1,0 @@
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\bin\Debug\Vincent OS Shell.exe
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\bin\Debug\Vincent OS Shell.pdb
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\bin\Debug\Vincent OS Shell.xml
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\obj\x86\Debug\Vincent_OS_Shell.Resources.resources
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\obj\x86\Debug\Vincent OS Shell.vbproj.GenerateResource.Cache
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\obj\x86\Debug\Vincent OS Shell.exe
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\obj\x86\Debug\Vincent OS Shell.xml
-C:\Users\v38armageddon\Documents\GitHub\Vincent-OS-Shell\Vincent OS Shell\obj\x86\Debug\Vincent OS Shell.pdb

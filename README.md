@@ -15,9 +15,7 @@ N'oubliez pas que les fichiers exécutables qui sont hors du dossier : "src" ne 
 
 Si vous faites un changement, voici la structure de où se situes les nouveaux fichiers exécutables :
 
-Pour les processeurs 32 bits : src/Vincent OS Shell/obj/x86/Debug/Vincent OS Shell.exe
-
-Pour les processeurs 64 bits : src/Vincent OS Shell/bin/Debug/Vincent OS Shell.exe
+``src/bin/x86/Debug/net6.0-windows/Vincent OS Shell.exe``
 
 ## Information
 Ce projet est un projet Open Source soumis sous la licence : GPL-3.0.
