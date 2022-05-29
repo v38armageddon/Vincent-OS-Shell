@@ -1,6 +1,6 @@
-# Vincent OS Shell
-Ceci est un dérivé du programme Terminal du mini système d'exploitation Vincent OS
- 
+# Vincent OS Shell Legacy
+Ceci est un dérivé du programme Terminal du mini système d'exploitation Vincent OS.
+
 ## Installation
 
 ### Installation standard
@@ -20,6 +20,8 @@ Pour les processeurs 32 bits : src/Vincent OS Shell/obj/x86/Debug/Vincent OS She
 Pour les processeurs 64 bits : src/Vincent OS Shell/bin/Debug/Vincent OS Shell.exe
 
 ## Information
+Dû à l'abandon du langage : Visual Basic .NET, j'ai décidé de changer en C#, j'ai laissé toutefois la version VB .NET en version Legacy.
+
 Ce projet est un projet Open Source soumis sous la licence : GPL-3.0.
 
 Ceci est un projet qui me servira commme concept. Je pense faire un shell spécial sous Linux mais a voir si je vais y arriver ou non à le faire.
