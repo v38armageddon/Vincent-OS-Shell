@@ -65,6 +65,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\Vincent OS Shell.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\Vincent OS Shell.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\Vincent OS Shell.deps.json"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
