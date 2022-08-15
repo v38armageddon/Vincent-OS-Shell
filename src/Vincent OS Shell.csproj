@@ -10,12 +10,13 @@
     <PlatformTarget>x86</PlatformTarget>
     <DebugType>none</DebugType>
     <Platforms>AnyCPU;x86</Platforms>
-    <Version>2</Version>
+    <Version>3</Version>
     <Authors>v38armageddon</Authors>
     <Company>$(Authors) Software</Company>
     <Copyright>Open Source 2019-2022</Copyright>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <FileVersion>3.0.0.0</FileVersion>
+    <StartupObject>Vincent_OS_Shell.Shell</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
