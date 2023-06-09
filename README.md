@@ -1,4 +1,4 @@
-# Vincent OS Shell
+# ![Vincent OS logo](Assets/logo.png) Vincent OS Shell
 Ceci est un dérivé du programme Terminal du mini système d'exploitation Vincent OS
  
 ## Installation
@@ -7,17 +7,28 @@ Ceci est un dérivé du programme Terminal du mini système d'exploitation Vince
 Vous pouvez télécharger l'installateur qui se situe dans les Release.
 
 ### Installation développeur
-Si vous voulez avoir tout les fichiers, vous pouvez cloner le projet. 
+Tout d'abord, clonez le projet.
 
-Si vous faites un changement, voici la structure de où se situe les nouveaux fichiers exécutables :
+#### Avec Visual Studio 2022 Community
+1. Ouvrez le projet : Vincent OS Shell.sln
+2. Build le projet
 
-``src/bin/x86/Debug/net6.0-windows/Vincent OS Shell.exe``
+#### Avec ``dotnet``
+1. Accédez au dossier "src" avec votre terminal
+2. Entrez la commande suivante :
+```
+$ dotnet build 'Vincent OS Shell.csproj'
+```
+3. Accédez au dossier "bin" et ses sous-dossiers puis lancer avec :
+```
+$ dotnet 'Vincent OS Shell.dll'
+```
 
 ## Information
-Ce projet est un projet Open Source soumis sous la licence : GPL-3.0.
+Ce projet est un projet Open Source soumis sous la licence : GPL-3.
 
 J'espère que le shell va vous plaire.
 
 En souhaitant une agréable journée.
 
-- v38armageddon
+\- v38armageddon
