@@ -1,0 +1,5 @@
+<Project>
+	<!--<Target Name="CreateSetupISSExe" AfterTargets="Build">
+		<Exec Command="'C:\Program Files (x86)\Inno Setup 6\ISCC.exe' Vincent OS Shell Setup.iss" ConsoleToMSBuild="true"/>
+	</Target>-->
+</Project>

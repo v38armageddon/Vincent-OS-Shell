@@ -21,13 +21,13 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\Vincent OS
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\LICENSE
+LicenseFile=D:\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\Setup
+OutputDir=D:\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\Vincent.OS.Shell.Package\
 OutputBaseFilename=Vincent OS Shell Setup
-SetupIconFile=C:\Users\v38armageddon\Pictures\Projets\Vincent OS\logo.ico
+SetupIconFile=D:\v38armageddon\Pictures\Projets\Vincent OS\VOS Shell.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -63,10 +63,8 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\Vincent OS Shell.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\Vincent OS Shell.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\bin\Release\net6.0-windows\Vincent OS Shell.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\Vincent.OS.Shell\bin\Release\net7.0\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\v38armageddon\Documents\GitHub\v38armageddon\Vincent-OS-Shell\src\Vincent.OS.Shell\bin\Release\net7.0\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
