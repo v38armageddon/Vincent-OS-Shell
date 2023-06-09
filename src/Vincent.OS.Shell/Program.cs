@@ -5,8 +5,8 @@
         public static void Main()
         {
             Console.Title = "Vincent OS Shell";
-            Console.WriteLine("Vincent OS [Version Shell Standalone]");
-            Console.WriteLine("Version : 3.0.0.0\n");
+            Console.WriteLine("Vincent OS Shell [Version Standalone]");
+            Console.WriteLine("Version : 4.0.0.0\n");
             cmdloop();
         }
 
