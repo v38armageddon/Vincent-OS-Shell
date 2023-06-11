@@ -7,12 +7,12 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="34823v38armageddon.Vincent.OS.Shell"
+    Name="34823v38armageddon.VincentOSShell"
     Publisher="CN=EF25BC35-CB3A-4D06-953A-49E6117D3FA3"
     Version="4.0.0.0" />
 
   <Properties>
-    <DisplayName>Vincent.OS.Shell</DisplayName>
+    <DisplayName>Vincent OS Shell</DisplayName>
     <PublisherDisplayName>v38armageddon</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -49,7 +49,7 @@
   </Applications>
 
   <Capabilities>
-    <Capability Name="internetClient" />
     <rescap:Capability Name="runFullTrust" />
+    <Capability Name="internetClient"/>
   </Capabilities>
 </Package>

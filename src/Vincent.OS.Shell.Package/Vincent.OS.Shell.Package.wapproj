@@ -58,6 +58,7 @@
     <NoWarn>$(NoWarn);NU1702</NoWarn>
     <PackageCertificateThumbprint>089D6C94D3508D0416D86215D084315D482B2380</PackageCertificateThumbprint>
     <EntryPointProjectUniqueName>..\Vincent.OS.Shell\Vincent.OS.Shell.csproj</EntryPointProjectUniqueName>
+    <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -66,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Directory.Build.targets" />
-    <Content Include="Dockerfile" />
     <Content Include="Images\LargeTile.scale-100.png" />
     <Content Include="Images\LargeTile.scale-125.png" />
     <Content Include="Images\LargeTile.scale-150.png" />
@@ -118,6 +118,7 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Vincent OS Shell Setup.iss" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />

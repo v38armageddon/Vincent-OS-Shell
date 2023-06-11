@@ -13,18 +13,7 @@ namespace Vincent_OS_Shell
                 { "hello", () =>
                     {
                         Debug.WriteLine("[INFO]: Commande 'hello' exécuté.");
-                        Console.WriteLine("Bienvenue sur Vincent OS Shell!\nTout réécrit en C# !\n");
-                    }
-                },
-                { "internet", () =>
-                    {
-                        Debug.WriteLine("[INFO]: Exécution du navigateur par défaut.");
-                        Process bingchrome = new Process();
-                        bingchrome.StartInfo.FileName = @"https://www.bing.com";
-                        bingchrome.StartInfo.UseShellExecute = true;
-                        bingchrome.StartInfo.RedirectStandardOutput = false;
-                        bingchrome.Start();
-                        Console.WriteLine("Bing Chrome lancé !\n");
+                        Console.WriteLine("Bienvenue sur Vincent OS Shell!\n");
                     }
                 },
                 { "help", () =>
@@ -32,7 +21,7 @@ namespace Vincent_OS_Shell
                         Debug.WriteLine("[INFO]: Commande 'help' exécuté.");
                         Console.WriteLine("Voici la liste des commandes disponibles sur Vincent OS Shell :\n" +
                             "hello\n" +
-                            "internet\n" +
+                            "conf\n" +
                             "help\n" +
                             "execute\n");
                     }
@@ -73,6 +62,23 @@ namespace Vincent_OS_Shell
                         }
                     }
                 },
+                { "conf", () =>
+                    {
+                        Debug.WriteLine("[INFO]: Commande 'conf' exécuté.");
+                        // Open the config file to the default text editor
+                        string homeFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                        string filePath = Path.Combine(homeFolder, "VOSshell.conf");
+                        if (Environment.OSVersion.Platform == PlatformID.Unix)
+                        {
+                            Process.Start("nano", filePath);
+                        }
+                        else if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+                        {
+                            Process.Start("notepad.exe", filePath);
+                        }
+                        Console.WriteLine("Fichier de configuration ouvert !\n");
+                    }
+                }
             };
 
             if (commands.ContainsKey(cmd))
