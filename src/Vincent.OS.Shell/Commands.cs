@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 
 namespace Vincent_OS_Shell
@@ -7,23 +8,24 @@ namespace Vincent_OS_Shell
     {
         private static readonly Dictionary<string, string> CommandDictionary = new Dictionary<string, string>()
         {
-            { "hello", "Simple commande" },
-            { "exit", "Quitte le shell" },
-            { "cd", "Se rendre à un dossier" },
-            { "conf", "Ouvre le fichier de configuration" },
-            { "help", "Commande aide" },
-            { "execute", "Exécute un programme ou script PowerShell, CMD" },
-            { "clear", "Nettoie le Terminal" },
-            { "uname", "Savoir quel système d'exploitation utiliser" },
-            { "say", "Dire quelque chose" },
-            { "ls", "Montrer tout les fichiers et dossiers" },
-            { "mkdir", "Créer un dossier" },
-            { "rmdir", "Supprime un dossier" },
-            { "rm", "Supprime un fichier" },
-            { "mv", "Déplace un fichier" },
-            { "cp", "Copie un fichier" },
-            { "cat", "Montre le contenu du fichier" },
-            { "whatshell", "Montrer quel shell est utilisé" }
+            { "hello", "" },
+            { "exit", "" },
+            { "cd", "" },
+            { "conf", "" },
+            { "help", "" },
+            { "execute", "" },
+            { "clear", "" },
+            { "uname", "" },
+            { "say", "" },
+            { "ls", "" },
+            { "mkdir", "" },
+            { "rmdir", "" },
+            { "rm", "" },
+            { "mv", "" },
+            { "cp", "" },
+            { "cat", "" },
+            { "whatshell", "" },
+            { "whoami", "" }
         };
 
         public static void Command()
@@ -84,6 +86,13 @@ namespace Vincent_OS_Shell
                         }
                     }
                 },
+                { "", () =>
+                    {
+                        Process process = new Process();
+                        process.StartInfo.FileName = cmd;
+                        process.Start();
+                    }
+                },
                 { "conf", () =>
                     {
                         // Open the config file to the default text editor
@@ -136,15 +145,13 @@ namespace Vincent_OS_Shell
                 { "ls",() =>
                     {
                         Console.WriteLine("Liste des fichiers et dossiers dans " + Environment.CurrentDirectory + "\n");
-                        string[] files = Directory.GetFiles(Environment.CurrentDirectory);
+                        string[] files = new string[Directory.GetFileSystemEntries(Environment.CurrentDirectory).Length];
                         string[] dirs = Directory.GetDirectories(Environment.CurrentDirectory);
-                        foreach (string file in files)
+                        Array.Copy(dirs, files, dirs.Length);
+                        Array.Copy(Directory.GetFiles(Environment.CurrentDirectory), 0, files, dirs.Length, files.Length - dirs.Length);
+                        foreach (string entry in files)
                         {
-                            Console.WriteLine(file);
-                        }
-                        foreach (string dir in dirs)
-                        {
-                            Console.WriteLine(dir);
+                            Console.WriteLine(Path.GetFileName(entry));
                         }
                     }
                 },
@@ -360,9 +367,20 @@ namespace Vincent_OS_Shell
             {
                 commands[cmd].Invoke();
             }
+            else if (!string.IsNullOrEmpty(cmd))
+            {
+                if (IsValidProgram(cmd))
+                {
+                    commands[""].Invoke();
+                }
+                else
+                {
+                    Console.WriteLine(cmd + " : Programme non reconnue.\n");
+                }
+            }
             else
             {
-                Console.WriteLine("Commande non reconnue.\n");
+                Console.WriteLine(cmd + " : Commande non reconnue.\n");
             }
 #pragma warning restore CS8604
         }
@@ -370,6 +388,22 @@ namespace Vincent_OS_Shell
         private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private static bool IsValidProgram(string cmd)
+        {
+            try
+            {
+                using (Process process = new Process())
+                {
+                    process.StartInfo.FileName = cmd;
+                    return true;
+                }
+            }
+            catch (Win32Exception)
+            {
+                return false;
+            }
         }
     }
 }
