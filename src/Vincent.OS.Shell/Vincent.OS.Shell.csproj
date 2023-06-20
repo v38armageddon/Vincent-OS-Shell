@@ -3,7 +3,6 @@
   <PropertyGroup>
 	<OutputType>Exe</OutputType>
 	<TargetFramework>net7.0</TargetFramework>
-	  <RuntimeIdentifier>any</RuntimeIdentifier>
 	<ImplicitUsings>enable</ImplicitUsings>
 	<Nullable>enable</Nullable>
 	<StartupObject>Vincent_OS_Shell.Shell</StartupObject>
