@@ -6,19 +6,28 @@
 	<ImplicitUsings>enable</ImplicitUsings>
 	<Nullable>enable</Nullable>
 	<StartupObject>Vincent_OS_Shell.Shell</StartupObject>
-	<ApplicationIcon>VOS Shell.ico</ApplicationIcon>
+	<ApplicationIcon>VOSShell.ico</ApplicationIcon>
+	<Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	<NoWarn>1701;1702;8600;8604</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NoWarn>1701;1702;8600;8604</NoWarn>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 	<NoWarn>1701;1702;8600;8604</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NoWarn>1701;1702;8600;8604</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
-	<Content Include="VOS Shell.ico" />
+	<Content Include="VOSShell.ico" />
   </ItemGroup>
 
 </Project>
