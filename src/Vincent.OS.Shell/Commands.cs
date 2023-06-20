@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Vincent_OS_Shell
 {
@@ -24,8 +25,13 @@ namespace Vincent_OS_Shell
             { "mv", "" },
             { "cp", "" },
             { "cat", "" },
+            { "time", "" },
             { "whatshell", "" },
-            { "whoami", "" }
+            { "whoami", "" },
+            { "hostname", "" },
+            { "pwd", "" },
+            { "shutdown", "" },
+            { "reboot", "" }
         };
 
         public static void Command()
@@ -35,16 +41,17 @@ namespace Vincent_OS_Shell
             {
                 { "hello", () =>
                     {
-                        Console.WriteLine("Bienvenue sur Vincent OS Shell!\n");
+                        Console.WriteLine("Welcome to Vincent OS Shell!\n");
                     }
                 },
                 { "help", () =>
                     {
-                        Console.WriteLine("Voici la liste des commandes disponibles sur Vincent OS Shell :");
+                        Console.WriteLine("Here is the list of available commands on Vincent OS Shell :");
                         foreach (var commandKey in CommandDictionary.Keys)
                         {
-                                Console.WriteLine(commandKey);
+                            Console.WriteLine(commandKey);
                         }
+                        Console.WriteLine("For more information about commands, visit: https://docs.v38armageddon.net/software/vincent-os/shell/list-of-commands\n");
                     }
                 },
                 { "execute", () =>
@@ -54,43 +61,54 @@ namespace Vincent_OS_Shell
                         switch (param)
                         {
                             case "ps_script":
-                                Debug.WriteLine("[INFO]: Commande 'Execute' exécuté avec le paramètre 'ps_script'.");
-
-                                break;
-                            case "cmd_script":
-                                Debug.WriteLine("[INFO]: Commande 'Execute' exécuté avec le paramètre 'cmd_script'.");
-
-                                break;
-                            case "ps":
-                                if (param == "ps")
+                                Console.Write(">> ");
+                                var param2 = Console.ReadLine();
+                                if (Path.GetExtension(param2) == ".ps1" || Path.GetExtension(param2) == ".psm1" ||
+                                Path.GetExtension(param2) == ".psd1")
                                 {
-                                    Process ps = new Process();
-                                    ps.StartInfo.FileName = @"powershell.exe";
-                                    ps.StartInfo.UseShellExecute = true;
-                                    ps.StartInfo.RedirectStandardOutput = false;
-                                    ps.Start();
-                                    Console.WriteLine("PowerShell lancé !\n");
+                                    Process process = new Process();
+                                    process.StartInfo.FileName = "powershell.exe";
+                                    process.StartInfo.Arguments = "./" + cmd;
+                                    process.Start();
+                                    Console.WriteLine("PowerShell script executed!\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine(cmd + ": Invalid file type.");
                                 }
                                 break;
-                            case "cmd":
-                                Debug.WriteLine("[INFO]: Commande 'Execute' exécuté avec le paramètre 'cmd'.");
-                                Process cmd = new Process();
-                                cmd.StartInfo.FileName = @"cmd.exe";
-                                cmd.StartInfo.UseShellExecute = true;
-                                cmd.StartInfo.RedirectStandardOutput = false;
-                                cmd.Start();
-                                Console.WriteLine("Invite de commande lancé !\n");
+                            case "cmd_script":
+                                Console.Write(">> ");
+                                var param3 = Console.ReadLine();
+                                if (Path.GetExtension(param3) == ".bat" || Path.GetExtension(param3) == ".cmd" ||
+                                Path.GetExtension(param3) == ".btm" || Path.GetExtension(param3) == ".vbs")
+                                {
+                                    Process process = new Process();
+                                    process.StartInfo.FileName = "cmd.exe";
+                                    process.StartInfo.Arguments = cmd;
+                                    process.Start();
+                                    Console.WriteLine("CMD script executed!\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine(cmd + ": Invalid file type.");
+                                }
                                 break;
-                            default:
-                                return;
                         }
                     }
                 },
                 { "", () =>
                     {
-                        Process process = new Process();
-                        process.StartInfo.FileName = cmd;
-                        process.Start();
+                        if (File.Exists(cmd))
+                        {
+                            Process process = new Process();
+                            process.StartInfo.FileName = cmd;
+                            process.Start();
+                        }
+                        else
+                        {
+                            Console.WriteLine(cmd + ": Command or Program not found.\n");
+                        }
                     }
                 },
                 { "conf", () =>
@@ -106,7 +124,7 @@ namespace Vincent_OS_Shell
                         {
                             Process.Start("notepad.exe", filePath);
                         }
-                        Console.WriteLine("Fichier de configuration ouvert !\n");
+                        Console.WriteLine("Configuration file opened!\n");
                     }
                 },
                 { "exit", () =>
@@ -138,13 +156,13 @@ namespace Vincent_OS_Shell
                         }
                         else if (!Directory.Exists(path) || !File.Exists(path))
                         {
-                            Console.WriteLine(cmd + ": Chemin non valide.");
+                            Console.WriteLine(cmd + ": Invalid path.");
                         }
                     }
                 },
                 { "ls",() =>
                     {
-                        Console.WriteLine("Liste des fichiers et dossiers dans " + Environment.CurrentDirectory + "\n");
+                        Console.WriteLine("List of all files and directory in " + Environment.CurrentDirectory + "\n");
                         string[] files = new string[Directory.GetFileSystemEntries(Environment.CurrentDirectory).Length];
                         string[] dirs = Directory.GetDirectories(Environment.CurrentDirectory);
                         Array.Copy(dirs, files, dirs.Length);
@@ -188,7 +206,7 @@ namespace Vincent_OS_Shell
                         }
                         else if (!File.Exists(path))
                         {
-                            Console.WriteLine(cmd + ": Chemin non valide.");
+                            Console.WriteLine(cmd + ": Invalid path.");
                         }
                     }
                 },
@@ -210,7 +228,7 @@ namespace Vincent_OS_Shell
                         }
                         else if (!Directory.Exists(path))
                         {
-                            Console.WriteLine(cmd + ": Chemin non valide.");
+                            Console.WriteLine(cmd + ": Invalid path.");
                         }
                     }
                 },
@@ -236,11 +254,11 @@ namespace Vincent_OS_Shell
                                 return;
                             }
                         });
-                        if (!File.Exists(path1) || !File.Exists(path2))
+                        if (!File.Exists(path1) || !Directory.Exists(path2))
                         {
-                            Console.WriteLine(cmd + path1, path2 + ": Chemin non valide.");
+                            Console.WriteLine(cmd + path1, path2 + ": Invalid path.");
                         }
-                        else if (File.Exists(path1) && File.Exists(path2))
+                        else if (File.Exists(path1) && !Directory.Exists(path2))
                         {
                             File.Move(path1, path2);
                         }
@@ -268,11 +286,11 @@ namespace Vincent_OS_Shell
                                 return;
                             }
                         });
-                        if (!File.Exists(path1) || !File.Exists(path2))
+                        if (!File.Exists(path1) || !Directory.Exists(path2))
                         {
-                            Console.WriteLine(cmd + path1, path2 + ": Chemin non valide.");
+                            Console.WriteLine(cmd + path1, path2 + ": Invalid path.");
                         }
-                        else if (File.Exists(path1) && File.Exists(path2))
+                        else if (File.Exists(path1) && Directory.Exists(path2))
                         {
                             File.Copy(path1, path2);
                         }
@@ -296,7 +314,7 @@ namespace Vincent_OS_Shell
                         }
                         else if (!File.Exists(path))
                         {
-                            Console.WriteLine(cmd + ": Chemin non valide.");
+                            Console.WriteLine(cmd + ": Invalid path.");
                         }
                     }
                 },
@@ -352,37 +370,36 @@ namespace Vincent_OS_Shell
                 },
                 { "shutdown",() =>
                     {
-                        Process.Start("shutdown", "/s /t 0");
+                        OSPlatform OS = new OSPlatform();
+                        if (OS == OSPlatform.Windows)
+                        {
+                            Process.Start("shutdown", "/s /t 0");
+                        }
+                        else if (OS == OSPlatform.Linux)
+                        {
+                            Process.Start("sudo poweroff");
+                        }
                     }
                 },
                 { "reboot",() =>
                     {
-                        Process.Start("shutdown", "/r /t 0");
+                        OSPlatform OS = new OSPlatform();
+                        if (OS == OSPlatform.Windows)
+                        {
+                            Process.Start("shutdown", "/r /t 0");
+                        }
+                        else if (OS == OSPlatform.Linux)
+                        {
+                            Process.Start("sudo reboot");
+                        }
                     }
                 },
             };
 
-#pragma warning disable CS8604
             if (commands.ContainsKey(cmd))
             {
                 commands[cmd].Invoke();
             }
-            else if (!string.IsNullOrEmpty(cmd))
-            {
-                if (IsValidProgram(cmd))
-                {
-                    commands[""].Invoke();
-                }
-                else
-                {
-                    Console.WriteLine(cmd + " : Programme non reconnue.\n");
-                }
-            }
-            else
-            {
-                Console.WriteLine(cmd + " : Commande non reconnue.\n");
-            }
-#pragma warning restore CS8604
         }
 
         private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)

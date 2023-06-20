@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Vincent OS Shell"
-#define MyAppVersion "3"
+#define MyAppVersion "4"
 #define MyAppPublisher "v38armageddon"
 #define MyAppURL "https://www.github.com/v38armageddon/Vincent-OS-Shell"
-#define MyAppExeName "Vincent OS Shell.exe"
+#define MyAppExeName "Vincent.OS.Shell.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -74,4 +74,3 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-

@@ -1,34 +1,34 @@
 # ![Vincent OS logo](Assets/logo.png) Vincent OS Shell
-Ceci est un dérivé du programme Terminal du mini système d'exploitation Vincent OS App.
+This is a derivative of the Terminal program in the Vincent OS App mini operating system.
  
 ## Installation
 
-### Installation standard
-Vous pouvez télécharger l'installateur qui se situe dans les Release.
+### Recommended installation
+<a href="https://apps.microsoft.com/store/detail/9NV4W0334DS2?launch=true&mode=mini">
+	<img src="https://get.microsoft.com/images/en%20dark.svg"/>
+</a>
+You can get the shell via the Microsoft Store: https://apps.microsoft.com/store/detail/vincent-os-shell/9NV4W0334DS2
+
+### Alternative installation
+You can get the separate installer via the releases page.
 
 ### Installation développeur
-Tout d'abord, clonez le projet.
+First all, clone the repo.
 
-#### Avec Visual Studio 2022 Community
-1. Ouvrez le projet : Vincent OS Shell.sln
-2. Build le projet
+#### With Visual Studio 2022 Community
+1. Open the project : Vincent.OS.Shell.sln
+2. Build the project
 
-#### Avec ``dotnet``
-1. Accédez au dossier "src" avec votre terminal
-2. Entrez la commande suivante :
+#### With ``dotnet``
+1. Access to the folder "src/Vincent.OS.Shell" with your terminal.
+2. Enter the following command :
 ```
-$ dotnet build 'Vincent OS Shell.csproj'
+$ dotnet build 'Vincent.OS.Shell.csproj'
 ```
-3. Accédez au dossier "bin" et ses sous-dossiers puis lancer avec :
+3. Access to the folder "bin" and all it's subfolders and launch with :
 ```
-$ dotnet 'Vincent OS Shell.dll'
+$ dotnet 'Vincent.OS.Shell.dll'
 ```
 
 ## Information
-Ce projet est un projet Open Source soumis sous la licence : GPL-3.
-
-J'espère que le shell va vous plaire.
-
-En souhaitant une agréable journée.
-
-\- v38armageddon
+This project is open source with the following license: GPL-3.

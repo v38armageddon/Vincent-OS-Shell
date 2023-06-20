@@ -50,7 +50,7 @@ namespace Vincent_OS_Shell
         public static void initConsole(bool showTimeValue, bool simplyPathValue)
         {
             Console.Title = "Vincent OS Shell";
-            Console.WriteLine("Vincent OS Shell [Version Standalone]");
+            Console.WriteLine("Vincent OS Shell [Standalone Version]");
             Console.WriteLine("Version : 4.0.0.0\n");
             cmdLoop();
         }
